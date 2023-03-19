@@ -7,14 +7,13 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-dist-electron/
 node_modules
 dist
 release
 *.local
 
+dist-electron
 # Editor directories and files
-.vscode
 .vscode/*
 !.vscode/extensions.json
 .idea
