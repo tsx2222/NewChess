@@ -1,7 +1,7 @@
 /*
  * @Author: 洛圣都马头人
  * @Date: 2023-03-12 19:24:05
- * @LastEditTime: 2023-03-12 19:33:36
+ * @LastEditTime: 2023-03-19 15:24:33
  * @LastEditors: 洛圣都马头人
  * @Description: electron主进程文件
  * @FilePath: \NewChess\electron-main\index.ts
@@ -19,13 +19,13 @@ const createWindow = () => {
       nodeIntegration: true,
       // 是否开启隔离上下文
       contextIsolation: false,
-      preload: path.join(__dirname, "../electron-preload/index.js"),
+      //preload: path.join(__dirname, "../electron-preload/index.js"),
     },
   });
 
   // 如果打包了，渲染index.html
   if (app.isPackaged) {
-    win.loadFile(path.join(__dirname, "../index.html"));
+    win.loadURL(`file://${path.join(__dirname, '../dist/index.html')}`);
   } else {
     // 开发环境
     let url = "http://localhost:3000"; // 本地启动的vue项目路径
